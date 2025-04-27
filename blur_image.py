@@ -136,7 +136,12 @@ def get_pixel_at(pixel_grid, i, j):
     Returns 0 if i or j is a negative value.
     """
 
-    # REMOVE THIS COMMENT AND REPLACE IT WITH YOUR CODE ...
+    if i<0 or j<0 or i>=len(pixel_grid) or j>=len(pixel_grid[0]):
+        return 0
+    else:
+        return pixel_grid[i][j]
+
+    
 
 
 def test_get_pixel_at():
@@ -184,7 +189,7 @@ def test_get_pixel_at():
 # Run the tests. This method prints nothing if the tests
 # pass. This method prints an error message for the first
 # error it encounters.
-# test_get_pixel_at()
+#print(test_get_pixel_at())
 
 
 def average_of_surrounding(pixel_grid, i, j):
@@ -194,7 +199,10 @@ def average_of_surrounding(pixel_grid, i, j):
     """
     pixel_sum = 0
     # REMOVE THIS COMMENT AND REPLACE IT WITH YOUR CODE ...
-
+    num_pixel = 0
+    for x in [-1,0,1]:
+        for y in [-1,0,1]:
+            pixel_sum=[i+x, j+y]
     # pixel_sum should be an integer. We intend for this to be
     # truncating integer division.
     return pixel_sum // 9
